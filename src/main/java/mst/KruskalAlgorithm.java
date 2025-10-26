@@ -35,7 +35,7 @@ public class KruskalAlgorithm {
         operations = 0;
         List<Edge> edges = new ArrayList<>(g.edges);
         edges.sort(Comparator.naturalOrder());
-        operations += edges.size(); // counting sorts as ops approximation
+        operations += edges.size();
 
         DSU dsu = new DSU();
         dsu.makeSet(g.vertices);
