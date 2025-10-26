@@ -13,7 +13,7 @@ public class PrimAlgorithm {
         long startTime = System.nanoTime();
 
         visited.add(start);
-        operations++; // initial add
+        operations++;
         for (Edge e : g.adj.getOrDefault(start, Collections.emptyList())) {
             pq.add(e); operations++;
         }
@@ -22,7 +22,7 @@ public class PrimAlgorithm {
             Edge e = pq.poll(); operations++;
             String u = e.from, v = e.to;
             String next = visited.contains(u) ? v : u;
-            if (visited.contains(next)) { operations++; continue; } // both visited
+            if (visited.contains(next)) { operations++; continue; }
             mst.add(e); operations++;
             visited.add(next); operations++;
             for (Edge ne : g.adj.getOrDefault(next, Collections.emptyList())) {
